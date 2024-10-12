@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas do Estudante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aulas</h1>
+        <ul id="classesList"></ul>
+        <a href="Profile.html" class="btn">Voltar para Profile</a>
+    </div>
+
+    <script>
+        const classes = ['Aula 1', 'Aula 2', 'Aula 3'];
+
+        function renderClasses() {
+            const list = document.getElementById('classesList');
+            classes.forEach(classItem => {
+                const li = document.createElement('li');
+                li.innerText = classItem;
+                list.appendChild(li);
+            });
+        }
+
+        renderClasses();
+    </script>
+</body>
+</html>

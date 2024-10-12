@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Cursos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .course {
+            padding: 15px;
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meus Cursos</h1>
+        <div id="myCourses"></div>
+        <a href="StudentDashClass.html" class="btn">Voltar para Aulas</a>
+    </div>
+
+    <script>
+        const myCourses = [
+            { name: 'Curso de HTML', theme: 'Web Design', description: 'Introdução ao HTML e suas tags.' },
+            { name: 'Curso de CSS', theme: 'Estilização', description: 'Estilos e layouts com CSS.' }
+        ];
+
+        function renderMyCourses() {
+            const coursesDiv = document.getElementById('myCourses');
+            myCourses.forEach(course => {
+                const courseDiv = document.createElement('div');
+                courseDiv.classList.add('course');
+                courseDiv.innerHTML = `<h3>${course.name}</h3><p>${course.theme}</p><p>${course.description}</p><button class="btn">SAIR DO CURSO</button>`;
+                coursesDiv.appendChild(courseDiv);
+            });
+        }
+
+        renderMyCourses();
+    </script>
+</body>
+</html>

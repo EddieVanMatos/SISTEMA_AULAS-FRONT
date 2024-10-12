@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Curso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sobre o Curso</h1>
+        <p id="courseDescription">Carregando informações do curso...</p>
+        <a href="StudentDashClass.html" class="btn">Voltar para Aulas</a>
+        <a href="Model.html" class="btn">Página Inicial</a>
+    </div>
+
+    <script>
+        const courseInfo = {
+            name: 'Curso de JavaScript Avançado',
+            description: 'Este curso aborda conceitos avançados de JavaScript, incluindo promessas, async/await, closures e programação funcional.'
+        };
+
+        document.getElementById('courseDescription').innerText = `${courseInfo.name}: ${courseInfo.description}`;
+    </script>
+</body>
+</html>

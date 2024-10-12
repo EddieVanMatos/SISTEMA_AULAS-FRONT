@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades do Estudante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Atividades</h1>
+        <ul id="activitiesList"></ul>
+        <a href="Profile.html" class="btn">Voltar para Profile</a>
+    </div>
+
+    <script>
+        const activities = ['Atividade 1', 'Atividade 2', 'Atividade 3'];
+
+        function renderActivities() {
+            const list = document.getElementById('activitiesList');
+            activities.forEach(activity => {
+                const li = document.createElement('li');
+                li.innerText = activity;
+                list.appendChild(li);
+            });
+        }
+
+        renderActivities();
+        fetch('/api/aulas')
+    .then(response => response.json())
+    .then(data => {
+        // Renderizar as aulas na tela
+    });
+    function criarAtividade(atividade) {
+    fetch('/api/atividades', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(atividade)
+    }).then(response => {
+        if (response.ok) {
+            alert("Atividade criada com sucesso!");
+        }
+    });
+}
+    </script>
+</body>
+</html>
